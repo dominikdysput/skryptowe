@@ -71,6 +71,19 @@ for ($i = 0; $i < scalar @text; $i++)
     }
     if ($text[$i] =~ $regexName)
     {
+	if ($wasFirst == 0)
+	{
+		$j = $i + 1;
+        	while($j < scalar @text)
+        	{
+			if ($text[$j] =~ $regexName)
+			{
+				$prev = $text[$j-8];
+                last;
+			}
+			$j++;	
+		}
+	}
         push @score, $prev;
         $wasFirst = 1;
         if (index($text[$i+1], "<") != -1 && index($text[$i+1], ">") != -1) ##jesli brak imienia to nazwa bedzie wyciagnieta z regexa
