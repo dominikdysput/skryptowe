@@ -1,3 +1,4 @@
+#python 2
 import sys
 characters = [0] * 26
 

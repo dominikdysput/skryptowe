@@ -1,3 +1,4 @@
+#python 3
 import sys
 import os
 import pathlib
